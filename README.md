@@ -60,8 +60,51 @@ sample json
 Ans 2.
 -----
 
+HTML
+---
+```
+<div id="parent">
+  <div class="test">
+  </div>
+  <div class="test">
+  </div>
+  <div class="test">
+  </div>
+  <div class="test">
+  </div>
+</div>
 ```
 
+First Design
+---
+```
+#parent {
+  width: 270px;
+}
+
+#parent .test{
+  width: 120px;
+  height: 120px;
+  background-color: #808080;
+  margin: 5px;
+}
+
+```
+
+Second Design
+---
+```
+#parent {
+  width: 270px;
+}
+
+#parent .test{
+  float: left;
+  width: 120px;
+  height: 120px;
+  background-color: #808080;
+  margin: 5px;
+}
 ```
 
 Ans 3.
@@ -121,23 +164,28 @@ Ans 6.
 ```
 var calculate = {
   time: function(principal, interest, tax, desired) {
-		var time = 0; // time in years
 
-		while ( time >= 0 ) { // creating an infinite loop
+    // time in years
+    var time = 0;
 
-     	if ( principal == desired || principal >=desired ) { //return time on this condition
-     		return this.addString(time);
-     	}
+    // creating an infinite loop
+    while ( time >= 0 ) {
 
-			var currInterest = interest * principal;
-	  	var currTax = currInterest * tax;
+      //return time on this condition
+      if ( principal == desired || principal >=desired ) {
+      return this.addString(time);
+      }
+
+      var currInterest = interest * principal;
+      var currTax = currInterest * tax;
 
       principal = principal + currInterest - currTax;
       time++;
-   }},
-   addString: function(time){
+    }
+  },
+  addString: function(time){
     return time + " years";
-   }
+  }
 }
 
 var year = calculate.time(1000, 0.05, 0.18, 1100);
