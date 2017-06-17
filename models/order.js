@@ -11,7 +11,7 @@ const orderSchema = new Schema({
   orderStatus: {type: Number, enum: [0,1,2,3]},
   paymentStatus: {type: Number, enum: [0,1,2,3]},
   details: [{
-    detailStatus: Boolean,
+    detailStatus: {type: Number, enum: [0,1]},
     price: Number,
     _id: ObjectId,
     completeDate: Date,

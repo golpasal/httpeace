@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 // DB Setup
-mongoose.connect('mongodb://localhost:httpeace/httpeace');
+mongoose.connect('mongodb://localhost:httpeace/httpeace'); // creates a httpeace mongodb database
 
 // App Setup
 app.use(morgan('combined'));
